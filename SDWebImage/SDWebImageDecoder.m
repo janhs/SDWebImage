@@ -101,7 +101,7 @@ static SDWebImageDecoder *sharedInstance;
                               alphaInfo != kCGImageAlphaNoneSkipFirst &&
                               alphaInfo != kCGImageAlphaNoneSkipLast);
 
-    UIGraphicsBeginImageContextWithOptions(image.size, !imageHasAlphaInfo, 0);
+    UIGraphicsBeginImageContextWithOptions(image.size, !imageHasAlphaInfo, 1.f);
     CGRect rect = (CGRect){.origin = CGPointZero, .size = image.size};
     [image drawInRect:rect];
     UIImage *decompressedImage = UIGraphicsGetImageFromCurrentImageContext();
